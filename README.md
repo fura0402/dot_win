@@ -8,7 +8,7 @@
 
 #### 1. Microsoft StoreからPowershellをインストール
 
-#### 2. 以下を実行（dot_winがdotfilesのサブモジュールとして登録されている場合）
+#### 2. 以下を実行（dot_winがdotfilesのサブモジュールとして登録されている場合のみ）
 ```pwsh
 . env:USERPROFILE\dotfiles\dot_win\installer\install.ps1
 ```
