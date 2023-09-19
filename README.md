@@ -8,9 +8,9 @@
 
 #### 1. Microsoft StoreからPowershellをインストール
 
-#### 2. 以下を実行（dot_winがホームディレクトリにクローンされている場合）
+#### 2. 以下を実行（dot_winがdotfilesのサブモジュールとして登録されている場合）
 ```pwsh
-. env:USERPROFILE\dot_win\installer\install.ps1
+. env:USERPROFILE\dotfiles\dot_win\installer\install.ps1
 ```
 
 #### 3. 手動でインストールが必要なアプリ
