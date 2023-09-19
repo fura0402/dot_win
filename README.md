@@ -10,7 +10,7 @@
 
 #### 2. 以下を実行（dot_winがdotfilesのサブモジュールとして登録されている場合のみ）
 ```pwsh
-. env:USERPROFILE\dotfiles\dot_win\installer\install.ps1
+. env:USERPROFILE\dotfiles\dot_win\installer\installer.ps1
 ```
 
 #### 3. 手動でインストールが必要なアプリ
