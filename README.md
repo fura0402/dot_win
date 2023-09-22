@@ -6,12 +6,22 @@
 ## How to Install.
 > :warning: Full Install のみサポート
 
-#### 1. Microsoft StoreからPowershellをインストール
+#### 1. Microsoft Storeから`Windows Terminal` & `Powershell`をインストール
 
-#### 2. 以下を実行（dot_winがdotfilesのサブモジュールとして登録されている場合のみ）
+#### 2. Windows Terminalを管理者権限で起動
+
+#### 3. ホストとしてインストールする場合、SSHの設定を行う
+
+#### 4. 以下を実行
+
+> :warning: 前提: dotfilesのサブモジュールとしてdot_winにアクセスしている
+
 ```pwsh
 . env:USERPROFILE\dotfiles\dot_win\installer\install.ps1
 ```
 
-#### 3. 手動でインストールが必要なアプリ
+#### 5. 手動でインストールが必要なアプリ
   * Adobe製品
+
+#### 6. 手動で設定が必要な項目
+  * PowerToys
