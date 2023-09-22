@@ -71,6 +71,7 @@ $winget_app_list = @{
 	"Discord"                   = "Discord.Discord"
 	"Docker Desktop"            = "Docker.DockerDesktop"
 	"Everything"                = "voidtools.Everything"
+	"EverythingToolbar"         = "stnkl.EverythingToolbar"
 	"Flow Launcher"             = "Flow-Launcher.Flow-Launcher"
 	"Google Chrome"             = "Google.Chrome"
 	"Google 日本語入力"         = "Google.JapaneseIME"
