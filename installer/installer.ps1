@@ -1,3 +1,7 @@
+function print_message ($msg) {
+	Write-Host $msg -ForegroundColor "Green"
+}
+
 function print_error ($msg) {
 	Write-Host $msg -ForegroundColor "Red"
 }
@@ -8,11 +12,8 @@ function has_command ($command) {
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-# setup Scoop
-irm get.scoop.sh | iex
 
-$scoop_package_list = @(
-  "7zip",
+$scoop_main_package_list = @(
   "bat",
   "clangd",
   "cmake",
@@ -25,7 +26,6 @@ $scoop_package_list = @(
   "go",
   "gzip",
   "jq",
-  "lazygit",
   "llvm",
   "lua",
   "make",
@@ -33,15 +33,11 @@ $scoop_package_list = @(
   "neovim",
   "nodejs-lts",
   "oh-my-posh",
-  "posh-docker",
-  "posh-git",
-  "psfzf",
   "python",
   "ripgrep",
   "rust-analyzer",
   "rustup",
   "sudo",
-  "terminal-icons",
   "tree-sitter",
   "unzip",
   "uutils-coreutils",
@@ -49,16 +45,30 @@ $scoop_package_list = @(
   "wget",
   "zoxide"
 )
+$scoop_extras_package_list = @(
+  "lazygit",
+  "posh-docker",
+  "posh-git",
+  "psfzf",
+  "terminal-icons"
+)
 
 if (!(has_command scoop)) {
-	print_error("Error: `"scoop`" is not found.")
-} else {
-	scoop bucket add extras
-  scoop update
-
-	foreach ($package in $scoop_package_list) {
-		scoop install $package
-	}
+	print_message("Installing scoop...")
+	# Command to install scoop
+	irm get.scoop.sh | iex
+}
+scoop update
+foreach ($package in $scoop_main_package_list) {
+	scoop install $package
+}
+scoop bucket add extras
+foreach ($package in $scoop_extras_package_list) {
+	scoop install $package
+}
+{
+	scoop bucket add nerd-fonts
+	scoop install Hack-NF-Mono
 }
 
 .\symbolic.ps1
@@ -66,7 +76,7 @@ if (!(has_command scoop)) {
 # setup Winget
 $winget_app_list = @{
 	"Adobe Creative Cloud"      = "XPDLPKWG9SW2WD"
-	"Autodesk Fusion 360"       = "73e72ada57b7480280f7a6f4a289729f"
+	"Autodesk Desktop App"      = "Autodesk.DesktopApp"
 	"DeepL"                     = "XPDNX7G06BLH2G"
 	"Discord"                   = "Discord.Discord"
 	"Docker Desktop"            = "Docker.DockerDesktop"
@@ -84,20 +94,21 @@ $winget_app_list = @{
 	"Visual Studio Code"        = "Microsoft.VisualStudioCode"
 	"Windows Terminal"          = "Microsoft.WindowsTerminal"
 	"Zoom"                      = "Zoom.Zoom"
-    "AutoHotkey"                = "AutoHotkey.AutoHotkey"
-    "Visual Studio Build Tools" = "Microsoft.VisualStudio.2022.BuildTools" # rustに必要
+  "AutoHotkey"                = "AutoHotkey.AutoHotkey"
+  "Visual Studio Build Tools" = "Microsoft.VisualStudio.2022.BuildTools" # rustに必要
 }
 
 if (!(has_command winget)) {
 	print_error("Error: `"winget`" is not found.")
 } else {
-	foreach ($app in $winget_app_list) {
-    winget install $app.Values
+  foreach ($app in $winget_app_list.GetEnumerator()) {
+		print_message("Installing $($app.Key)...")
+    winget install $app.Value
 	}
-  winget upgrade
+	winget upgrade
 }
 
 # "Import-Module DockerCompletion"を実行可能にするため以下が必要
 Install-Module DockerCompletion -Scope CurrentUser
 
-Write-Output ". $env:USERPROFILE\.config\powershell\user_profile.ps1" >> $PROFILE
+Write-Output ". `$env:USERPROFILE\.config\powershell\user_profile.ps1" > $PROFILE
