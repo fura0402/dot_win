@@ -94,10 +94,12 @@ $winget_app_list = @{
   "QuickLook"                 = "QL-Win.QuickLook"
   "Spotify"                   = "9NCBCSZSJRSB"
   "Twitter"                   = "9WZDNCRFJ140"
+  "VLC"                       = "XPDM1ZW6815MQM"
   "Visual Studio Build Tools" = "Microsoft.VisualStudio.2022.BuildTools" # rustに必要
   "Visual Studio Code"        = "Microsoft.VisualStudioCode"
   "Windows Terminal"          = "Microsoft.WindowsTerminal"
   "Zoom"                      = "Zoom.Zoom"
+  "iCloud"                    = "9PKTQ5699M62"
 }
 
 if (!(has_command winget)) {
