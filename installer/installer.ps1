@@ -77,7 +77,7 @@ foreach ($package in $scoop_extras_package_list) {
 $winget_app_list = @{
   "3D Viewer"                 = "9NBLGGH42THS"
   "Adobe Creative Cloud"      = "XPDLPKWG9SW2WD"
-  "Auto Desk Mode"            = "XP8JK4HZBVF435"
+  "Auto Dark Mode"            = "XP8JK4HZBVF435"
   "AutoHotkey"                = "AutoHotkey.AutoHotkey"
   "Autodesk Desktop App"      = "Autodesk.DesktopApp"
   "DeepL"                     = "XPDNX7G06BLH2G"
