@@ -86,7 +86,6 @@ $winget_app_list = @{
   "EverythingToolbar"         = "stnkl.EverythingToolbar"
   "Flow Launcher"             = "Flow-Launcher.Flow-Launcher"
   "Google Chrome"             = "Google.Chrome"
-  "Google 日本語入力"         = "Google.JapaneseIME"
   "KiCad"                     = "KiCad.KiCad"
   "Line Desktop"              = "XPFCC4CD725961"
   "OBS Studio"                = "XPFFH613W8V6LV"
