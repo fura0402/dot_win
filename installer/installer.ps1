@@ -76,6 +76,7 @@ foreach ($package in $scoop_extras_package_list) {
 # setup Winget
 $winget_app_list = @{
   "3D Viewer"                 = "9NBLGGH42THS"
+  "7zip"                      = "7zip.7zip"
   "Adobe Creative Cloud"      = "XPDLPKWG9SW2WD"
   "AutoHotkey"                = "AutoHotkey.AutoHotkey"
   "Autodesk Desktop App"      = "Autodesk.DesktopApp"
