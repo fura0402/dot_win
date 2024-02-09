@@ -80,6 +80,7 @@ $winget_app_list = @{
   "Adobe Creative Cloud"      = "XPDLPKWG9SW2WD"
   "AutoHotkey"                = "AutoHotkey.AutoHotkey"
   "Autodesk Desktop App"      = "Autodesk.DesktopApp"
+  "Blender"                   = "9PP3C07GTVRH"
   "DeepL"                     = "XPDNX7G06BLH2G"
   "Discord"                   = "Discord.Discord"
   "Docker Desktop"            = "Docker.DockerDesktop"
